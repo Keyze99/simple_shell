@@ -160,10 +160,8 @@ char *_strtok(char *str, const char *delim)
 		start += i;
 		return (res);
 	}
-
 	start[i] = '\0';
 	res = start;
 	start += i + 1;
-
 	return (res);
 }
