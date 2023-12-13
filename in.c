@@ -14,7 +14,6 @@ int get_line(char **line_ptr, int *n, int fd)
 	static int read_size, i, prev_fd = -1;
 
 	int j = 0, found_newline = 0;
-
 	char *temp = NULL;
 
 	if (fd != prev_fd)
@@ -42,7 +41,6 @@ int get_line(char **line_ptr, int *n, int fd)
 		{
 			if (buffer[i] == '\n')
 				found_newline = 1;
-
 			(*line_ptr)[j] = buffer[i];
 			j++, i++;
 			if (found_newline)
@@ -50,7 +48,6 @@ int get_line(char **line_ptr, int *n, int fd)
 		}
 	}
 	(*line_ptr)[j] = '\0';
-
 	return (1);
 }
 
