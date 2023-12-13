@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * len - get string length
- * @s: string
- * Return: length of s
- */
+* len - get string length
+* @s: string
+* Return: length of s
+*/
 size_t len(const char *s)
 {
 	size_t i = 0;
@@ -19,13 +19,14 @@ size_t len(const char *s)
 }
 
 /**
- * copy - copy a string
- * @s: string to copy
- * Return: new string
- */
+* copy - copy a string
+* @s: string to copy
+* Return: new string
+*/
 char *copy(const char *s)
 {
 	int i, length = len(s);
+
 	char *res;
 
 	if (s == NULL)
@@ -46,15 +47,17 @@ char *copy(const char *s)
 }
 
 /**
- * concat - concatinate two stings
- * @s1: first string
- * @s2: second string
- * Return: pointer to concatinated string
- */
+* concat - concatinate two stings
+* @s1: first string
+* @s2: second string
+* Return: pointer to concatinated string
+*/
 char *concat(const char *s1, const char *s2)
 {
 	int i, l1 = len(s1), l2 = len(s2);
+
 	int l_res = l1 + l2;
+
 	char *res;
 
 	if (s1 == NULL)
@@ -82,12 +85,12 @@ char *concat(const char *s1, const char *s2)
 }
 
 /**
- * _strcmp - compare two strings
- * @s1: string 1
- * @s2: string 2
- * Return: 0 if they're equal, -1 if s1 is less than s2, 1 if s1 is greater
- * than s2
- */
+* _strcmp - compare two strings
+* @s1: string 1
+* @s2: string 2
+* Return: 0 if they're equal, -1 if s1 is less than s2, 1 if s1 is greater
+* than s2
+*/
 int _strcmp(const char *s1, const char *s2)
 {
 	int i;
@@ -117,43 +120,40 @@ int _strcmp(const char *s1, const char *s2)
 }
 
 /**
- * _strtok - get a token from a string
- * @str: token start
- * @delim: string of delimiters
- * Return: token start
- */
+* _strtok - get a token from a string
+* @str: token start
+* @delim: string of delimiters
+* Return: token start
+*/
 char *_strtok(char *str, const char *delim)
 {
 	static char *start;
+
 	int i = 0;
+
 	char *res = NULL;
 
 	if (str != NULL)
 		start = str;
 
-	/* skip any delimiters at the start */
-	while (start[i] != '\0')
+	while (start[i] != '\0') /* skip any delimiters at the start */
 	{
 		if (find_char(delim, start[i]) == -1)
 			break;
 		i++;
 	}
-
 	start += i;
 	i = 0;
 
-	/* skip until you reach a delimiter */
-	while (start[i] != '\0')
+	while (start[i] != '\0') /* skip until you reach a delimiter */
 	{
 		if (find_char(delim, start[i]) != -1)
 			break;
 
 		i++;
 	}
-
 	if (i == 0)
 		return (NULL);
-
 	if (start[i] == '\0')
 	{
 		res = start;
@@ -163,5 +163,6 @@ char *_strtok(char *str, const char *delim)
 	start[i] = '\0';
 	res = start;
 	start += i + 1;
+
 	return (res);
 }

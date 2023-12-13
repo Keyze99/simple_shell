@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * is_path - check if a command is a path
- * @command: command to check
- * Return: 1 if command is a path, 0 if it isn't
- */
+* is_path - check if a command is a path
+* @command: command to check
+* Return: 1 if command is a path, 0 if it isn't
+*/
 int is_path(const char *command)
 {
 	int res = starts_with(command, "../");
@@ -16,15 +16,17 @@ int is_path(const char *command)
 }
 
 /**
- * path_concat - put two strings together to make a path
- * @s1: first part of path
- * @s2: second part of path
- * Return: result of both
- */
+* path_concat - put two strings together to make a path
+* @s1: first part of path
+* @s2: second part of path
+* Return: result of both
+*/
 char *path_concat(const char *s1, const char *s2)
 {
 	int i, j, l1 = len(s1), l2 = len(s2), add_separator = 0;
+
 	int l_res = l1 + l2;
+
 	char *res;
 
 	if (s1 == NULL)
@@ -57,10 +59,10 @@ char *path_concat(const char *s1, const char *s2)
 }
 
 /**
- * is_dir - check if a pathname is a directory
- * @pathname: ...
- * Return: 1 if true, 0 if false
- */
+* is_dir - check if a pathname is a directory
+* @pathname: ...
+* Return: 1 if true, 0 if false
+*/
 int is_dir(const char *pathname)
 {
 	struct stat file_stat;
@@ -70,14 +72,15 @@ int is_dir(const char *pathname)
 }
 
 /**
- * find_in_PATH - finds a file in PATH
- * @command: command with the file name
- * @temp: temporary var to gree after split
- * Return: a string of the pathname if found, NULL if not found
- */
+* find_in_PATH - finds a file in PATH
+* @command: command with the file name
+* @temp: temporary var to gree after split
+* Return: a string of the pathname if found, NULL if not found
+*/
 char *find_in_PATH(const char *command, char **temp)
 {
 	char *PATH, **paths, *pathname, **env = _env(GET_VARIABLE, NULL);
+
 	int path_index, i;
 
 	path_index = get_env("PATH");
@@ -114,12 +117,12 @@ char *find_in_PATH(const char *command, char **temp)
 }
 
 /**
- * can_access - check access to file
- * Also sets the correct exit code if exiting is necessary
- * @command: command entered by user
- * @pathname: pathname to file
- * Return: 1 if there's access, 0 if there's none
- */
+* can_access - check access to file
+* Also sets the correct exit code if exiting is necessary
+* @command: command entered by user
+* @pathname: pathname to file
+* Return: 1 if there's access, 0 if there's none
+*/
 int can_access(const char *command, const char *pathname)
 {
 	if (pathname != NULL)

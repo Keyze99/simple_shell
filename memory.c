@@ -64,3 +64,18 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	return (res);
 }
+
+/**
+ * my_free - frees a memory block and sets it to null, only if it's not null
+ * @ptr: pointer to a pointer that points to the memory block
+ * Return: 1 if freed, 0 if not freed
+ */
+int my_free(void **ptr)
+{
+	if (*ptr == NULL)
+		return (0);
+
+	free(*ptr);
+	*ptr = NULL;
+	return (1);
+}
