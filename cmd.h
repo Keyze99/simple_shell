@@ -9,7 +9,6 @@
  * @MULTI_AND: ...
  * @MULTI_OR: ...
  */
-
 typedef enum cmd_type
 {
 	BUILTIN,
@@ -20,8 +19,8 @@ typedef enum cmd_type
 } cmd_type;
 
 /**
- * struct cmd - describes a CMD
- * @type: type of CMD (enum CMD_TYPE)
+ * struct cmd - describes a command
+ * @type: type of command (enum COMMAND_TYPE)
  */
 struct cmd
 {
@@ -34,7 +33,7 @@ struct cmd
 typedef struct cmd cmd;
 
 /**
- * struct builtin_cmd - describes a builtin CMD
+ * struct builtin_cmd - describes a builtin command
  * @type: ...
  * @builtin_func: function to call to execute builtin
  */
@@ -45,7 +44,7 @@ struct builtin_cmd
 };
 
 /**
- * struct file_cmd - describes an executable CMD
+ * struct file_cmd - describes an executable command
  * @type: ...
  * @pathname: path to file
  */
@@ -56,10 +55,10 @@ struct file_cmd
 };
 
 /**
- * struct multi_cmd - describes multiple CMDs
+ * struct multi_cmd - describes multiple commands
  * @type: ...
- * @left: CMD on the left
- * @right: CMD on the right
+ * @left: command on the left
+ * @right: command on the right
  */
 struct multi_cmd
 {
@@ -79,11 +78,11 @@ typedef struct builtin_cmd builtin_cmd;
 typedef struct file_cmd file_cmd;
 
 /**
- * multi_cmd - type for multiple CMDs
+ * multi_cmd - type for multiple commands
  */
 typedef struct multi_cmd multi_cmd;
 
-/* MAKECMD */
+/* MAKECOMMAND */
 cmd *make_builtincmd(void (*callback)(char **));
 cmd *make_execmd(char *);
 cmd *make_multicmd(char *);

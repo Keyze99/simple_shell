@@ -1,13 +1,14 @@
 #include "main.h"
 
 /**
- * exit_builtin - exits program
- * @args: args containing exit code
- * Return: -1 if failed, nothing if not failed
- */
+* exit_builtin - exits program
+* @args: args containing exit code
+* Return: -1 if failed, nothing if not failed
+*/
 int exit_builtin(char **args)
 {
 	int code = exit_status(GET_VARIABLE, 0);
+
 	char *err;
 
 	if (args[1] != NULL)
@@ -26,13 +27,14 @@ int exit_builtin(char **args)
 }
 
 /**
- * env_builtin - print env
- * @args: command arguments
- * Return: return (0 on success)
- */
+* env_builtin - print env
+* @args: command arguments
+* Return: return (0 on success)
+*/
 int env_builtin(char **args)
 {
 	int i;
+
 	char **env = _env(GET_VARIABLE, 0);
 
 	UNUSED(args);
@@ -46,14 +48,16 @@ int env_builtin(char **args)
 }
 
 /**
- * find_builtin - get a command structure for a builtin command
- * @command: command to find a builtin for
- * Return: builtin command structure
- */
+* find_builtin - get a command structure for a builtin command
+* @command: command to find a builtin for
+* Return: builtin command structure
+*/
 cmd *find_builtin(const char *command)
 {
 	int i;
+
 	int (*func)(char **args) = NULL;
+
 	builtin_cmd *res = NULL;
 	builtin_f builtins[] = {
 		{"exit", exit_builtin},
