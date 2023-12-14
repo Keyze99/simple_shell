@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * getcommand - gets a cmd object from a command string
+ * getcmd - gets a cmd object from a command string
  * @command: command string
  * @temp: temp to free
  * Return: a cmd structure
@@ -24,10 +24,10 @@ cmd *getcmd(const char *command, char **temp)
 		if (pathname == NULL || pathname[0] == '\0')
 		{
 			if (pathname == NULL)
-				print_err(command, "Permission denied");
+				print_error(command, "Permission denied");
 			else if (pathname[0] == '\0')
 			{
-				print_err(command, "not found");
+				print_error(command, "not found");
 				free(pathname);
 			}
 			exit_status(SET_VARIABLE, 127);

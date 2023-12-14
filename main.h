@@ -76,11 +76,11 @@ char *find_in_PATH(const char *command, char **temp);
 
 int can_access(const char *command, const char *pathname);
 
-/* GETCOMMAND */
-cmd *getcommand(const char *command, char **temp);
+/* GETCMD */
+cmd *getcmd(const char *command, char **temp);
 
-/* RUNCOMMAND */
-int runcommand(cmd *command, char **args);
+/* RUNCMND */
+int runcmd(cmd *command, char **args);
 
 int run_exe(file_cmd *command, char **args);
 
@@ -89,9 +89,9 @@ int run_builtin(builtin_cmd *command, char **args);
 int run_multi(multi_cmd *command, char **args);
 
 /* ERRORS */
-int _errno(int update);
+int _errnumber(int update);
 
-int print_err(const char *command, const char *error);
+int print_error(const char *command, const char *error);
 
 /* ENV */
 void init_env(char **env);

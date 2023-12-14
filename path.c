@@ -129,19 +129,19 @@ int can_access(const char *command, const char *pathname)
 	{
 		if (access(pathname, F_OK) != 0)
 		{
-			print_err(command, "not found");
+			print_error(command, "not found");
 			exit_status(SET_VARIABLE, 127);
 			return (0);
 		}
 		if (access(pathname, X_OK) != 0)
 		{
-			print_err(command, "Permission denied");
+			print_error(command, "Permission denied");
 			exit_status(SET_VARIABLE, 126);
 			return (0);
 		}
 		if (is_dir(pathname))
 		{
-			print_err(command, "Permission denied");
+			print_error(command, "Permission denied");
 			exit_status(SET_VARIABLE, 127);
 			return (0);
 		}

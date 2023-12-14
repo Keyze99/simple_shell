@@ -17,7 +17,7 @@ int exit_builtin(char **args)
 	if (code < 0)
 	{
 		err = concat("Illegal number: ", args[1]);
-		print_err("exit", err);
+		print_error("exit", err);
 		free(err);
 		return (2);
 	}
