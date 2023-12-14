@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * runcmd - runs a command
+ * runcommand - runs a command
  * @command: command to run
  * @args: args for this command
  * Return: 0 on success, exit code on fail
  */
-int runcmd(cmd *command, char **args)
+int runcommand(cmd *command, char **args)
 {
 	int res;
 	file_cmd *file_temp = NULL;

@@ -89,9 +89,9 @@ int run_builtin(builtin_cmd *command, char **args);
 int run_multi(multi_cmd *command, char **args);
 
 /* ERRORS */
-int _errno(int update);
+int _errnumber(int update);
 
-int print_err(const char *command, const char *error);
+int print_error(const char *command, const char *error);
 
 /* ENV */
 void init_env(char **env);

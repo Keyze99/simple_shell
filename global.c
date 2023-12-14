@@ -27,7 +27,7 @@ int exit_status(enum access_options access_option, int value)
 	{
 		old_value = value;
 		if (value != 0)
-			_errno(1);
+			_errnumber(1);
 	}
 
 	return (old_value);
