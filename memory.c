@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* push - push a pointer into an array of pointers
+* push -To push a pointer into an array of pointers
 * @arr: pointer to array of pointers
 * @length: pointer to length of current array
 * @ptr: pointer to push to array

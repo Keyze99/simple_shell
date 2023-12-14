@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* exit_builtin - exits program
+* exit_builtin - This exits program
 * @args: args containing exit code
 * Return: -1 if failed, nothing if not failed
 */

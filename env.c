@@ -2,7 +2,7 @@
 
 /**
  * get_env - gets one environment variable from
- * @varname: name of environment variable
+ * @varname: The  name of environment variable
  * Return: index of environment variable, -1 if variable not found
  */
 int get_env(const char *varname)

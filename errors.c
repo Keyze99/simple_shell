@@ -17,7 +17,7 @@ int _errnumber(int update)
 
 /**
  * print_error - print an error to stderr
- * @command: command where the error happend
+ * @command: The command where the error happend
  * @error: content of error message
  * Return: length of printed error
  */

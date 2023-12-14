@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* ultos - convert unsigned long to string
+* ultos - To convert unsigned long to string
 * @ul: unsigned long integer
 * Return: string that represents the unsigned long
 */

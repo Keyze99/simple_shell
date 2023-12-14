@@ -1,7 +1,7 @@
 #include "string.h"
 
 /**
- * starts_with - checks if a string starts with a substring
+ * starts_with - To checks if a string starts with a substring
  * @str: string to check in
  * @prefix: substring to check for
  * Return: 1 if str starts with prefix, 0 if not

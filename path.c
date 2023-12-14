@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* is_path - check if a command is a path
+* is_path - To check if a command is a path
 * @command: command to check
 * Return: 1 if command is a path, 0 if it isn't
 */
