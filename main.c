@@ -53,9 +53,9 @@ int main(int ac, char **argv, char **env)
 			free(args);
 			continue;
 		}
-		command = getcommand(args[0], &temp2);
+		command = getcmd(args[0], &temp2);
 		if (command != NULL)
-			exit_code = runcommand(command, args);
+			exit_code = runcmd(command, args);
 		my_free((void **)&temp1);
 		my_free((void **)&temp2);
 		free(args);

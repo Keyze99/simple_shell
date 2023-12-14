@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * getcommand - gets a cmd object from a command string
+ * getcmd - gets a cmd object from a command string
  * @command: command string
  * @temp: temp to free
  * Return: a cmd structure
  */
-cmd *getcommand(const char *command, char **temp)
+cmd *getcmd(const char *command, char **temp)
 {
 	cmd *res = NULL;
 	char *pathname = NULL;

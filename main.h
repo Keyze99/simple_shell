@@ -76,11 +76,11 @@ char *find_in_PATH(const char *command, char **temp);
 
 int can_access(const char *command, const char *pathname);
 
-/* GETCOMMAND */
-cmd *getcommand(const char *command, char **temp);
+/* GETCMD */
+cmd *getcmd(const char *command, char **temp);
 
-/* RUNCOMMAND */
-int runcommand(cmd *command, char **args);
+/* RUNCMND */
+int runcmd(cmd *command, char **args);
 
 int run_exe(file_cmd *command, char **args);
 
